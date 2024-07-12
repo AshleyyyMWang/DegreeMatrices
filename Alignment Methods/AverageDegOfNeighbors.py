@@ -2,6 +2,7 @@ import networkx as nx
 import numpy as np
 
 
+# put in "lastfm" in place of "flickr" in the code to experiment with lastfm alignment.
 # change variables "percentage" and "precision_half" for different experiments.
 
 
