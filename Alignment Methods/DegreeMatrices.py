@@ -3,6 +3,9 @@ import numpy as np
 from scipy.optimize import linear_sum_assignment
 
 
+# put in "lastfm" in place of "flickr" in the code to experiment with lastfm alignment.
+
+
 def create_sample_graph(edge_path, node_path):
     mygraph = nx.read_edgelist(edge_path)
     with open(node_path, "r") as node_file_f:
