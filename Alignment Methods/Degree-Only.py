@@ -1,6 +1,9 @@
 import networkx as nx
 
 
+# put in "lastfm" in place of "flickr" in the code to experiment with lastfm alignment.
+
+
 def create_sample_graph(edge_path, node_path):
     mygraph = nx.read_edgelist(edge_path)
     node_file_path_f = node_path
