@@ -1,5 +1,5 @@
 # Degree Matrix Comparison
 
-To start, we need to download datasets from https://www.aminer.cn/cosnet. Specifically, look for datasets for Flickr and Lastfm. It would also be helpful to download from the Ground Truth Mapping section the Flickr to Lastfm dictionary. We would also need flickr_graph.graphml and lastfm_graph.graphml which are uploaded as files.
+To start, we need to download datasets from https://www.aminer.cn/cosnet. Specifically, look for datasets for Flickr, Lastfm, and Myspace. Then, download "com-Youtube" and "ego-Facebook" from the SNAP database. We would also need the graphml files for the five networks which are uploaded.
 
-To run the code files, simply put in whether we are running Flickr or Lastfm experiments, and make sure to put in the right paths for downloaded files and datasets.
+To run the code files, code scripts would need to be modified depending on which network we are running the experiment on. Ideally, everything should run as long as you put in the right paths for downloaded files and datasets.
