@@ -141,12 +141,12 @@ def generate_results_table(results, precision_half_list, num_nodes_list):
 
 
 # Create the graph using only the edge list
-edges_path = "/Users/ashleywang/Desktop/facebook/1912.edges"
+edges_path = "/Path/to/facebook/1912.edges"
 mygraph_facebook = create_graph_from_edges(edges_path)
 print("Full graph created from edge list.")
 
 # Example usage
-graphml_path = "/Users/ashleywang/Desktop/facebook_700.graphml"  # Replace with the actual file path
+graphml_path = "/Path/to/facebook_700.graphml"  # Replace with the actual file path
 
 # Load the graph from the GraphML file
 facebook_graph = load_graph_from_graphml(graphml_path)
