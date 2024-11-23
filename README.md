@@ -9,9 +9,9 @@
 We provide code scripts that can execute with the graphml files posted, but the synthetic data creation process can differ significantly depending on the input graphs.
 
 ## Considerations
-a) Graphml files are sampled graphs (G_{s}) that can be used for further sampling and graph alignment.
-b) To run the code files, code scripts would need to be modified depending on which network we are running the experiment on. Ideally, everything should run as long as you put in the right paths for downloaded files and datasets.
-c) The DMC_Facebook should be easier to modify when applied to Facebook or Youtube networks for alignment. The other DMC script is easier to modify for Flickr, Lastfm, and Myspace.
+1. Graphml files are sampled graphs ($G_{s}$) that can be used for further sampling and graph alignment.
+2. To run the code files, code scripts would need to be modified depending on which network we are running the experiment on. Ideally, everything should run as long as you put in the right paths for downloaded files and datasets.
+3. The DMC_Facebook should be easier to modify when applied to Facebook or Youtube networks for alignment. The other DMC script is easier to modify for Flickr, Lastfm, and Myspace.
 
 
 
