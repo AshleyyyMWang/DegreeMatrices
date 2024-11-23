@@ -9,7 +9,7 @@ def load_graph_from_graphml(graphml_path):
     return nx.read_graphml(graphml_path)
 
 
-# Random walk to create a subgraph
+# Random walk to create G_{s}
 def random_walk(mygraph, subgraph_size, max_iter=100):
     progress = 0
     current_node = np.random.choice(list(mygraph.nodes()))
@@ -39,7 +39,6 @@ def random_walk(mygraph, subgraph_size, max_iter=100):
             potential_nodes = set(mygraph.nodes()) - set(network_sub_nodes)
             if potential_nodes:
                 next_node = np.random.choice(list(potential_nodes))
-                # print(f"Resetting to a new node: {current_node}")
             else:
                 print("No more new nodes to reset to; exiting.")
                 break
@@ -47,7 +46,6 @@ def random_walk(mygraph, subgraph_size, max_iter=100):
 
         # Update the current node
         current_node = next_node
-        # print("Progress (number of nodes appended):", progress + 1)
 
     network_sub = mygraph.subgraph(network_sub_nodes).copy()
     print("Random walk completed.")
@@ -63,7 +61,7 @@ def delete_edges_randomly(graph, deletion_probability=0.01):
     return modified_graph
 
 
-# Create neighbor degree matrix
+# Create degree matrix
 def create_neighbor_degree_matrix(graph, max_degree):
     num_nodes = len(graph.nodes())
     matrix = np.zeros((num_nodes, max_degree))
@@ -163,7 +161,7 @@ def run_alignment_experiment(graph, target_node_count, deletion_probability):
 
 
 # Main execution
-graphml_path = "/Users/ashleywang/Desktop/combined_ppi.graphml"
+graphml_path = "/Path/to/combined_ppi.graphml"
 main_graph = load_graph_from_graphml(graphml_path)
 print("Graph loaded from GraphML file.")
 
