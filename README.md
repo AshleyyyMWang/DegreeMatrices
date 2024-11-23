@@ -8,6 +8,8 @@
 ## Code Content
 We provide code scripts that can execute with the graphml files posted (five on the main page and the combined_ppi.graphml file is in the releases), but the synthetic data creation process can differ significantly depending on the input graphs. Once the graph extraction and sampling processes are done, the Degree Matrix Comparison process is the same and can be directly used. If one has difficulty running other scripts, it is most important to get the PPI DMC to work, so that one could borrow most of the method code for future experiments and adapt it to different networks from different sources.
 
+In the Alignment Methods file, there are many methods. All of them are degree based methods, but only the ones labeled with "DMC" or involve "degree matrices" in the title are the ones eventually proposed in the paper. 
+
 ## Considerations
 1. Graphml files are sampled graphs ($G_{s}$) that can be used for further sampling and graph alignment.
 2. To run the code files, code scripts would need to be modified depending on which network we are running the experiment on. Ideally, everything should run as long as you put in the right paths for downloaded files and datasets.
