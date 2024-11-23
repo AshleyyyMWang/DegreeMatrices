@@ -1,6 +1,6 @@
 ## Degree Matrix Comparison
 
-#Datasets
+# Datasets
 1. COSNET: https://www.aminer.cn/cosnet. Specifically, look for datasets for Flickr, Lastfm, and Myspace.
 2. SNAP: Download "com-Youtube" and "ego-Facebook" from the SNAP database. For the baseline experiments, the PPI dataset we are using is taken from here: https://snap.stanford.edu/biodata/datasets/10013/10013-PPT-Ohmnet.html.
 3. Network Repository: search in the repository with network name as listed in the paper, then download the files. One would need to perform the graph sampling from the start.
