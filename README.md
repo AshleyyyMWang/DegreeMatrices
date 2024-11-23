@@ -6,7 +6,7 @@
 3. Network Repository: search in the repository with network name as listed in the paper, then download the files. One would need to perform the graph sampling from the start.
 
 ## Code Content
-We provide code scripts that can execute with the graphml files posted, but the synthetic data creation process can differ significantly depending on the input graphs. Once the graph extraction and sampling processes are done, the Degree Matrix Comparison process is the same and can be directly used.
+We provide code scripts that can execute with the graphml files posted (five on the main page and the combined_ppi.graphml file is in the releases), but the synthetic data creation process can differ significantly depending on the input graphs. Once the graph extraction and sampling processes are done, the Degree Matrix Comparison process is the same and can be directly used. If one has difficulty running other scripts, it is most important to get the PPI DMC to work, so that one could borrow most of the method code for future experiments and adapt it to different networks from different sources.
 
 ## Considerations
 1. Graphml files are sampled graphs ($G_{s}$) that can be used for further sampling and graph alignment.
