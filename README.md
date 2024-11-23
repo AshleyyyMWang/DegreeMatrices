@@ -11,7 +11,7 @@ We provide code scripts that can execute with the graphml files posted (five on 
 In the Alignment Methods file, there are many methods. All of them are degree based methods, but only the ones labeled with "DMC" or involve "degree matrices" in the title are the ones eventually proposed in the paper. The other degree based methods have exhibited insatisfactory performance, but they inspired the creation of DMC or Greedy DMC.
 
 ## Considerations
-1. Graphml files are large graphs ($G_{s}$) that can be used for further sampling and graph alignment.
+1. Graphml files are large graphs ($G_{r}$) that can be used for further sampling and graph alignment.
 2. To run the code files, code scripts would need to be modified depending on which network we are running the experiment on. 
 3. The DMC_Facebook should be easier to modify when applied to Facebook or Youtube networks for alignment. The flickr_degree_matrices.py DMC script is easier to modify for Flickr, Lastfm, and Myspace. Moreover, we post the DMC and Greedy DMC scripts for the PPI network used for comparing DMC and Greedy DMC to baselines.
 
