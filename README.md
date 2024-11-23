@@ -6,7 +6,7 @@
 3. Network Repository: search in the repository with network name as listed in the paper, then download the files. One would need to perform the graph sampling from the start.
 
 ## Code Content
-We provide code scripts that can execute with the graphml files posted, but the synthetic data creation process can differ significantly depending on the input graphs.
+We provide code scripts that can execute with the graphml files posted, but the synthetic data creation process can differ significantly depending on the input graphs. Once the graph extraction and sampling processes are done, the Degree Matrix Comparison process is the same and can be directly used.
 
 ## Considerations
 1. Graphml files are sampled graphs ($G_{s}$) that can be used for further sampling and graph alignment.
