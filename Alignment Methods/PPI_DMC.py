@@ -5,7 +5,7 @@ from itertools import permutations
 import random
 
 
-# Function to load G_{s} from a GraphML file
+# Function to load G_{r} from a GraphML file
 def load_graph_from_graphml(graphml_path):
     return nx.read_graphml(graphml_path)
 
@@ -60,7 +60,7 @@ def delete_edges_randomly(graph, deletion_probability):
     return modified_graph
 
 
-# Create neighbor degree matrix for alignment
+# Create degree matrix for alignment
 def create_neighbor_degree_matrix(graph, max_degree):
     num_nodes = len(graph.nodes())
     matrix = np.zeros((num_nodes, max_degree))
@@ -73,7 +73,7 @@ def create_neighbor_degree_matrix(graph, max_degree):
     return matrix, list(graph.nodes())
 
 
-# Align two matrices for graph alignment
+# Align two matrices for graph alignment (Munkres)
 def align_matrices(matrix1, matrix2):
     cost_matrix = np.zeros((matrix1.shape[0], matrix2.shape[0]))
 
@@ -99,7 +99,7 @@ def graph_alignment(graph1, graph2):
     return node_mapping
 
 
-# Compute the signature vector for node equivalence
+# Compute the signature vector for node equivalence (use this if counting geometrically)
 def compute_signature_vector(graph, node):
     neighbors = list(graph.neighbors(node))
     signature_vector = []
@@ -137,32 +137,32 @@ def calculate_correct_predictions(alignment, graph):
 
 # Run the full alignment experiment
 def run_alignment_experiment(graph, target_node_count, deletion_probability):
-    # Step 1: Sample a connected subgraph
+    # Step 1: Sample G_{s} = G_{1}
     sampled_subgraph = random_walk(graph, target_node_count)
     print("First subgraph created.")
     print("G1 node count: ", len(sampled_subgraph.nodes()))
     print("G1 edge count: ", len(sampled_subgraph.edges()))
 
-    # Step 3: Randomly delete edges in the permuted subgraph
+    # Step 2: Randomly delete edges in G_{1} to get G_{2}
     final_subgraph = delete_edges_randomly(sampled_subgraph, deletion_probability)
     print("Final G2 subgraph created.")
     print("G2 node count: ", len(final_subgraph.nodes()))
     print("G2 edge count: ", len(final_subgraph.edges()))
 
-    # Step 4: Align the modified subgraph back to the original sampled subgraph
+    # Step 3: Alignment with DMC
     alignment = graph_alignment(sampled_subgraph, final_subgraph)
 
-    # Step 5: Calculate the number of correct predictions
+    # Step 4: Calculate the number of correct predictions
     correct_predictions = calculate_correct_predictions(alignment, sampled_subgraph)
     return correct_predictions
 
 
 # Main execution
-graphml_path = "/Users/ashleywang/Desktop/combined_ppi.graphml"
+graphml_path = "/Path/to/combined_ppi.graphml"
 main_graph = load_graph_from_graphml(graphml_path)
-print("Entire graph loaded.")
+print("G_{r} loaded.")
 target_node_count = 3890
-deletion_probability = 0.1
+deletion_probability = 0.01
 
 round = 0
 for i in range(10):
